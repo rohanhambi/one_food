@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1039426872723",
+    "firebase_url": "https://onefood-be6c9.firebaseio.com",
+    "project_id": "onefood-be6c9",
+    "storage_bucket": "onefood-be6c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039426872723:android:0a2a96a08835755d",
+        "android_client_info": {
+          "package_name": "onefood.one_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039426872723-4gr9af4jrv6r8p684au9a49rubvta174.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjhKZ93lTXJz_QBhjwXZNpNMphx0IAK3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039426872723-4gr9af4jrv6r8p684au9a49rubvta174.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
