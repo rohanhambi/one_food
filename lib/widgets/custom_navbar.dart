@@ -9,13 +9,15 @@ class CustomNavBar extends StatefulWidget {
   Color selectedColor = Colors.blue, unSelectedColor = Colors.grey;
   double iconSize = 24.0;
   ValueChanged<int> onChanged;
+  bool showTitle = false;
 
   CustomNavBar(
       {@required this.items,
       @required this.selectedIndex,
       @required this.selectedColor,
       @required this.unSelectedColor,
-      @required this.iconSize,this.onChanged}) {
+      @required this.iconSize,this.onChanged,
+      @required this.showTitle}) {
     assert(items.length > 2);
   }
 
@@ -38,15 +40,15 @@ class _CustomNavBarState extends State<CustomNavBar> {
             highlightColor: Colors.transparent,
             child: Column(
               children: <Widget>[
-                SizedBox(height: 3.0),
+                SizedBox(height: 5.0),
                 Icon(
                   widget.items[i].icon,
                   color: widget.selectedColor,
                   size: widget.iconSize,
                   semanticLabel: widget.items[i].title,
                 ),
-                Text('${widget.items[i].title}',textAlign: TextAlign.center,style: TextStyle(color: widget.selectedColor),),
-                SizedBox(height: 3.0)
+                widget.showTitle ? Text('${widget.items[i].title}',textAlign: TextAlign.center,style: TextStyle(color: widget.selectedColor),) : Container(),
+                widget.showTitle ? SizedBox(height: 3.0) :Container()
               ],
             ),
             radius: widget.iconSize,
@@ -69,15 +71,15 @@ class _CustomNavBarState extends State<CustomNavBar> {
             highlightColor: Colors.transparent,
             child: Column(
             children: <Widget>[
-              SizedBox(height: 3.0),
+              SizedBox(height: 5.0),
                Icon(
                   widget.items[i].icon,
                   color: widget.unSelectedColor,
                   size: widget.iconSize,
                   semanticLabel: widget.items[i].title,
                 ),
-              Text('${widget.items[i].title}',textAlign: TextAlign.center,style: TextStyle(color: widget.unSelectedColor),),
-              SizedBox(height: 3.0)
+              widget.showTitle ? Text('${widget.items[i].title}',textAlign: TextAlign.center,style: TextStyle(color: widget.unSelectedColor),) : Container(),
+              widget.showTitle ? SizedBox(height: 3.0): Container()
             ],
           ),radius: widget.iconSize,
             onTap: (){
@@ -98,7 +100,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     return Material(
       elevation: 5.0,
       child: SizedBox(
-        height: 50.0,
+        height: widget.showTitle ? 50.0: 40.0,
         child: Row(
           children: getButtons(),
         ),
